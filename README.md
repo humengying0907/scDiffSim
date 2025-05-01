@@ -21,10 +21,19 @@ A Framework for Simulating Heterogeneous Single-Cell and Pseudobulk Expression D
 ### Installation
 
 ```bash
+conda create -n scDiffusion
+conda activate scDiffusion
+conda install pytorch scvi-tools torchvision torchaudio pytorch-cuda jupyter scanpy python-igraph leidenalg mpi4py openmpi jax=0.4.34 jaxlib=0.4.34 -c conda-forge -c pytorch -c nvidia 
+
 git clone https://github.com/humengying0907/scDiffSim.git
-cd scDiffSim
 ```
 
+### Example Usage
+
+```
+cd scDiffSim/module1.0
+python main.py # adjust to your datapath, will generate a commend.txt file with all commands required 
+```
 
 ## 📘 Use Cases
 
