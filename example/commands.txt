@@ -1,0 +1,7 @@
+python ../../module1.0/step1_vae_training.py --data_path ../../../bulkSimu_scDiffusion/LUAD_Kim2020/LUAD_Kim2020.h5ad -d ./ --colname_of_cellType cell_type
+python ../../module1.0/step2_diffusion_training.py --data_path ../../../bulkSimu_scDiffusion/LUAD_Kim2020/LUAD_Kim2020.h5ad -d ./ --colname_of_cellType cell_type
+python ../../module1.0/step3_classifier_training.py --data_path ../../../bulkSimu_scDiffusion/LUAD_Kim2020/LUAD_Kim2020.h5ad -d ./ --colname_of_cellType cell_type --colname_of_cellType_heterogeneity sample
+python ../../module1.0/step4_SCANVI_training.py --data_path ../../../bulkSimu_scDiffusion/LUAD_Kim2020/LUAD_Kim2020.h5ad -d ./ --colname_of_labels cell_type
+python ../../module1.0/step5_sampling.py --data_path ../../../bulkSimu_scDiffusion/LUAD_Kim2020/LUAD_Kim2020.h5ad -d ./ --num_pseudobulk 50 --colname_of_cellType cell_type --colname_of_cellType_heterogeneity sample
+python ../../module1.0/step6_latent2expr.py --data_path ../../../bulkSimu_scDiffusion/LUAD_Kim2020/LUAD_Kim2020.h5ad -d ./ --colname_of_cellType cell_type --colname_of_cellType_heterogeneity sample --pseudobulk_subsampling 1 --min_nCells_per_pseudobulk 10
+python ../../module1.0/step7_pseudobulk_visualization.py -d ./
